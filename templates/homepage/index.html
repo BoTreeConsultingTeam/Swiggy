@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %
+{% block content %}
+  <div class="container" style='margin-top: 50px'>
+    <div class="row mb-5">
+            {% for data in names %}
+              <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                <div class="block-4 text-center border">
+                  <figure class="block-4-image">
+                    <a href="/index/food?id={{data.id}}"><img src="{{data.img.url}}" alt="Image placeholder" class="img-fluid" style='height:300px'></a>
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="/index/food?id={{data.id}}">{{data.restaurantname}}</a></h3>
+                    <p class="mb-0">{{data.city.cityname}}</p>
+                    <p class="text-primary font-weight-bold">address:{{data.address}}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+  </div> 
+    <div class="row" data-aos="fade-up">
+              <div class="col-md-12 text-center">
+                <div class="site-block-27">
+                   <ul>
+                  
+                      
+                          {% if names.has_previous %}
+                              <li><a href="?page={{ names.previous_page_number }}">&lt;</a></li>
+                              
+                          {% endif %}
+
+                          <span class="current">
+                              <li> Page {{ names.number }} of {{ names.paginator.num_pages }}. </li>
+                          </span>
+
+                          {% if names.has_next %}
+                             <li> <a href="?page={{ names.next_page_number }}">&gt;</a></li>
+                          {% endif %}
+                      </span>
+              
+              </div>
+            </div>
+</div>
+{% endblock %}

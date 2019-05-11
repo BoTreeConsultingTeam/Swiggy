@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %
+{% block content %}
+  <div class="container" style='margin-top: 50px;'>
+    <div class="row mb-5" >
+            {% for data in names %}
+              <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                <div class="block-4 text-center border" >
+                  <figure class="block-4-image">
+                    <a href="shop-single.html"><img src="{{data.img.url}}" alt="Image placeholder" class="img-fluid" style='height:250px'></a>
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="shop-single.html">{{data.dishname}}</a></h3>
+                    <p class="mb-0">{{data.dish_type.dish_type_name}}</p>
+                    <p class="text-primary font-weight-bold">price:{{data.price}}</p>
+                    <p class="mb-0">
+                        <a href="/cart_and_orders/cart?id={{data.id}}" class="btn btn-sm btn-success">Add to cart</a>
+                  </p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+  </div> 
+    <div class="row" data-aos="fade-up">
+              <div class="col-md-12 text-center">
+                <div class="site-block-27">
+                   <ul>
+                  
+                      
+                          {% if names.has_previous %}
+                              <li><a href="?id={{id}}&page={{ names.previous_page_number }}">&lt;</a></li>
+                              
+                          {% endif %}
+
+                          <span class="current">
+                              <li> Page {{ names.number }} of {{ names.paginator.num_pages }}. </li>
+                          </span>
+
+                          {% if names.has_next %}
+                             <li> <a href="?id={{id}}&page={{ names.next_page_number }}">&gt;</a></li>
+                          {% endif %}
+                      </span>
+              
+              </div>
+            </div>
+</div>
+{% endblock %}
