@@ -1,0 +1,251 @@
+[
+  {
+    "model": "restaurant.restaurant",
+    "pk": 27,
+    "fields": {
+      "ownername": "Binoy",
+      "restaurantname": "Honest",
+      "bank_account_no": "46621238892",
+      "state": 1,
+      "city": 1,
+      "address": "Pragati Nagar",
+      "img": "images/chole.jpeg",
+      "user": 20,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 28,
+    "fields": {
+      "ownername": "Binoy",
+      "restaurantname": "Pizza Hut",
+      "bank_account_no": "7855425325",
+      "state": 1,
+      "city": 7,
+      "address": "sec-2",
+      "img": "images/pizza_5DSWC0t.jpg",
+      "user": 20,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 29,
+    "fields": {
+      "ownername": "Binoy",
+      "restaurantname": "Chinese",
+      "bank_account_no": "78645256656",
+      "state": 1,
+      "city": 7,
+      "address": "sec 3",
+      "img": "images/chinese5.jpeg",
+      "user": 20,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 30,
+    "fields": {
+      "ownername": "Binoy",
+      "restaurantname": "Pizza Hut1",
+      "bank_account_no": "78946515",
+      "state": 1,
+      "city": 1,
+      "address": "iskon",
+      "img": "images/pizza2_TWm70wL.jpeg",
+      "user": 20,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 31,
+    "fields": {
+      "ownername": "Mayur",
+      "restaurantname": "Dominos",
+      "bank_account_no": "789942255",
+      "state": 2,
+      "city": 5,
+      "address": "andheri",
+      "img": "images/pizza3_VjLwRh0.jpeg",
+      "user": 19,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 32,
+    "fields": {
+      "ownername": "Mayur",
+      "restaurantname": "chinese",
+      "bank_account_no": "765169681698",
+      "state": 1,
+      "city": 1,
+      "address": "income tax",
+      "img": "images/chinese4.jpeg",
+      "user": 19,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 33,
+    "fields": {
+      "ownername": "Mayur",
+      "restaurantname": "Pooja",
+      "bank_account_no": "64644661646",
+      "state": 1,
+      "city": 7,
+      "address": "sec 21",
+      "img": "images/panipuri6.jpeg",
+      "user": 19,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 34,
+    "fields": {
+      "ownername": "Mayur",
+      "restaurantname": "Shakti Sandwich",
+      "bank_account_no": "789252552",
+      "state": 1,
+      "city": 1,
+      "address": "science city,sola",
+      "img": "images/sandwich1.jpeg",
+      "user": 19,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 18,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$a6et00QDedwM$XTxevs/RgmsLTyBVm4o5KObdgtjU1fIIkO6mca89dCA=",
+      "last_login": "2019-05-27T10:27:06.768Z",
+      "is_superuser": true,
+      "username": "meet",
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2019-05-27T10:25:43.222Z",
+      "email": "meet@gmail.com",
+      "contact": null,
+      "state": 1,
+      "city": 1,
+      "address": "",
+      "pincode": null,
+      "ownnershipstatus": "normaluser",
+      "count": "0",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 19,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$rThudk7McqVL$mhFHxWSf3pMFKm8pmobEIkTi3pudh1XDTun5I174bI0=",
+      "last_login": "2019-05-27T10:42:15.595Z",
+      "is_superuser": false,
+      "username": "mayur",
+      "first_name": "mayur",
+      "last_name": "prajapati",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-05-27T10:29:45.621Z",
+      "email": "mayur@gmail.com",
+      "contact": 123456789,
+      "state": 1,
+      "city": 1,
+      "address": "sabarmati",
+      "pincode": 123456,
+      "ownnershipstatus": "approved",
+      "count": "4",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 20,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$SUGpFOlkfd07$FeTjmIGnb9j733g1NpQM+D/3/Pgx6T/lI8Nvys3zXcU=",
+      "last_login": "2019-05-28T10:13:32.992Z",
+      "is_superuser": false,
+      "username": "binoy",
+      "first_name": "binoy",
+      "last_name": "oza",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-05-27T10:30:40.113Z",
+      "email": "binoy@gmail.com",
+      "contact": 123456789,
+      "state": 1,
+      "city": 1,
+      "address": "Shastri Nagar",
+      "pincode": 123456,
+      "ownnershipstatus": "approved",
+      "count": "4",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "city_and_state.state",
+    "pk": 1,
+    "fields": {
+      "statename": "Gujarat"
+    }
+  },
+  {
+    "model": "city_and_state.state",
+    "pk": 2,
+    "fields": {
+      "statename": "Maharashtra"
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 1,
+    "fields": {
+      "cityname": "ahmedabad",
+      "state": 1
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 4,
+    "fields": {
+      "cityname": "baroda",
+      "state": 1
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 5,
+    "fields": {
+      "cityname": "Mumbai",
+      "state": 2
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 6,
+    "fields": {
+      "cityname": "Pune",
+      "state": 2
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 7,
+    "fields": {
+      "cityname": "Gandhinagar",
+      "state": 1
+    }
+  }
+]

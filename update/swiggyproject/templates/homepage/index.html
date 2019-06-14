@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %
+  {% block content %}
+  <div class='wrapper'>
+      <div class='owl-carousel owl-theme'>
+        {% for i in x%}
+          <div class='item1'><h4>
+              <figure class="block-4-image">
+              <a href="/index/food?id={{i.id}}"><img src="{{i.img.url}}" alt="Image placeholder" class="img-fluid" style='height:150px'></a>
+            </figure>
+             
+              <h3 style='text-align: center'><a href="/index/food?id={{i.id}}">{{i.restaurantname}}</a></h3>
+            
+          </h4>
+        </div>
+        {% endfor %}
+        
+      </div>
+  </div>
+  <div id='indexid'>
+    <div class="container" style='margin-top: 0px'>
+      <div class="row mb-5">
+        {% for data in names %}
+        <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+          <div class="block-4 text-center border">
+            <figure class="block-4-image">
+              <a href="/index/food?id={{data.id}}"><img src="{{data.img.url}}" alt="Image placeholder" class="img-fluid" style='height:300px'></a>
+            </figure>
+            <div class="block-4-text p-4">
+              <h3><a href="/index/food?id={{data.id}}">{{data.restaurantname}}</a></h3>
+              <p class="mb-0">{{data.city.cityname}}</p>
+              <p class="text-primary font-weight-bold">address:{{data.address}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div> 
+      <div class="row" data-aos="fade-up">
+        <div class="col-md-12 text-center">
+          <div class="site-block-27">
+           <ul>
+
+
+            {% if names.has_previous %}
+            <li><a href="?page={{ names.previous_page_number }}">&lt;</a></li>
+
+            {% endif %}
+
+            <span class="current">
+              <li> Page {{ names.number }} of {{ names.paginator.num_pages }}. </li>
+            </span>
+
+            {% if names.has_next %}
+            <li> <a href="?page={{ names.next_page_number }}">&gt;</a></li>
+            {% endif %}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block javascript %}
+  <script type="text/javascript">
+          $('.owl-carousel').owlCarousel({
+          loop:true,
+          margin:10,
+          autoWidth:false,
+          nav:true,
+          navText : ['<i class="fa fa-angle-left" aria-hidden="true" ></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+          responsiveClass:true,
+          responsive:{
+              0:{
+                  items:1,
+                  nav:true
+              },
+              600:{
+                  items:3,
+                  nav:true
+              },
+              1000:{
+                  items:4,
+                  nav:true,
+                  loop:true
+              }
+          }
+      });
+
+
+    $('#searchform').on('submit',function(event) 
+          { 
+            event.preventDefault();
+             console.log("form submitted!")
+            console.log('search');
+             var url = $("#searchform").attr("data-search-url");  // get the url of the `load_cities` view
+              var searchinput = $("#searchinput").val(); 
+              console.log(searchinput); // get the selected country ID from the HTML input
+              $.ajax({                       // initialize an AJAX request
+                url: url, 
+                type:'GET',                   // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+                data: {
+                   
+                  'searchinput': searchinput  
+
+                        // add the country id to the GET parameters
+                },
+                success: function (data) {  
+                  console.log('success');
+                  console.log(data);
+                 // `data` is the return of the `load_cities` view function
+                  $("#indexid").html(data);  // replace the contents of the city input with the data that came from the server
+                },
+                error: function(data){
+                    debugger;
+                   console.log(data.error +'hi');
+                }
+              });   
+
+
+          });
+  </script>
+  <script type="text/javascript">
+    $("#searchinput").keyup(function(){
+         var url = $("#searchform").attr("data-search-url");  // get the url of the `load_cities` view
+              var searchinput = $("#searchinput").val(); 
+              console.log(searchinput); // get the selected country ID from the HTML input
+              $.ajax({                       // initialize an AJAX request
+                url: url, 
+                type:'GET',                   // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+                data: {
+                   
+                  'searchinput': searchinput  
+
+                        // add the country id to the GET parameters
+                },
+                success: function (data) {  
+                  console.log('success');
+                  console.log(data);
+                 // `data` is the return of the `load_cities` view function
+                  $("#indexid").html(data);  // replace the contents of the city input with the data that came from the server
+                },
+                error: function(data){
+                    debugger;
+                   console.log(data.error +'hi');
+                }
+              });   
+ 
+      });
+  </script>>
+{% endblock %}
+{% block css %}
+  <style>
+    .wrapper
+      {
+        width: 100%;
+       height:250px;
+        overflow: hidden;
+        }
+      .item1{
+        background:white;
+        height:200px;
+      }
+      .owl-prev,
+.owl-next {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+.owl-prev {
+  left: 0rem;
+  background:black;
+  color: white;
+}
+
+.owl-next {
+  right: 0rem;
+  background:black;
+  color: white;
+}
+
+   </style>
+{% endblock %}

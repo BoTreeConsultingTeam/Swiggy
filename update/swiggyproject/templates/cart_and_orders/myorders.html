@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+
+
+<div class='site-section'>
+	<div class='container'>
+		<div class='row'>
+			<div col-md-12>
+				<h1 style="color: black">Past Orders</h1>
+			</div>
+		</div>
+	</div>
+	{% for order in orderobject%}
+	<div class='container' style='border:1px solid #d4d5d9;margin-top: 15px' >
+		
+		<div class='row '  >
+			<div class='col-md-3  ' style='margin-top: 20px';>
+				<img src="{{order.restaurant.img.url}}" style='height:150px;width:150px'>
+				
+			</div>	
+			<div class='col-md-3 ' style='margin-top: 20px'> 
+				<ul	class='list-unstyled'  style='font-style:bold;font-size: 18px;color:black '>
+					<li><h4>Name:{{order.restaurant.restaurantname}}</h4> </li>
+					<li>Address:{{order.restaurant.address}} </li>
+					<li>
+						<a href="/cart_and_orders/myorderdetails?id={{order.id}}"  id='orderid_{{order.id}}' style='color:black'>Order No:
+						#00{{order.id}}</a>
+					</li>
+					<div id='tooltip_{{order.id}}' style='display:none;width:150px;background-color: #5cb85c;border-color:#4cae4c;text-align: center'> View Details</div>
+					{% if order.orderstatus == 'orderplaced' %}
+					<li style='background-color:blue;border-color:blue;width:220px;color:white;'>Status:{{order.orderstatus}}</li>
+					{% elif order.orderstatus == 'Food Prepared' %}
+						<li style='background-color:green;border-color:green;width:220px;color:white;'>Status:{{order.orderstatus}}</li>
+					{% elif order.orderstatus == 'Order Delivered' %}
+						<li style='background-color:red;border-color:red;width:220px;color:white;'>Status:{{order.orderstatus}}</li>
+					{% else %}
+					{% endif %}
+
+				</ul>	
+			</div>	
+			<div class='col-md-6 ' style='font-style:bold;font-size: 18px;margin-top:20px; color:black'>
+				<ul style="overflow:hidden; ">
+					{% for i in order.ordersitems_set.all %}
+					<li style='display: inline;'>{{i.dish.dishname}},</li>
+					{% endfor %}					
+					
+				</ul>
+				<ul style="overflow:hidden; ">
+					<li style='display: inline;'>Total Price: Rs {{order.totalpricetax}}</li>
+				</ul>
+				<ul style="overflow:hidden;">	
+					<li style='display: inline;'><Button type='Button' class='btn btn-success'> Reorder</Button></li>
+					<li style='display: inline;margin-left: 15px'><Button type='Button' class='btn btn-info'> Help</Button></li>
+				</ul>	
+
+			</div>	
+		</div>
+		
+	</div>	
+	{% endfor %}
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+	{% for order in orderobject%}
+	var e = document.getElementById('orderid_{{order.id}}');
+	e.onmouseover = function() {
+		document.getElementById('tooltip_{{order.id}}').style.display = 'block';
+	}
+	e.onmouseout = function() {
+		document.getElementById('tooltip_{{order.id}}').style.display = 'none';
+	}	
+	{% endfor %}
+
+</script>
+{% endblock %}

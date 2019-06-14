@@ -1,0 +1,55 @@
+{% if not orderobject %}
+	<h1 style='font-style:bold;color:black;margin-left:300px;margin-top: 100px'> There are no orders</h2>
+{% else %}
+<h2 style='font-style:bold;color:black'>Orders:</h2>
+			{% for order in orderobject %}
+			<div class='container' style='border:1px solid black;box-sizing: content-box;margin-top:18px'>
+				<div class='row'>
+					<div class='col-md-8'>
+						<ul class='list-unstyled' style='font-style:bold;font-size: 18px;color:black'>
+							<li style='font-size: 25px' id='orderid_{{order.id}}'>
+							<a href="/cart_and_orders/recieveorderdetails?id={{order.id}}"  id='orderid_{{order.id}}' style='color:black'>Order No: #00{{order.id}}
+							</a></li>
+							<div id='tooltip_{{order.id}}' style='display:none;width:150px;background-color: #5cb85c;border-color:#4cae4c;text-align: center'> View Details</div>
+							<li style=''>Name: {{order.user.first_name}}  {{order.user.last_name}}</li>
+							{% for address in order.deliveryaddress_set.all %}
+							<li>Delivery Address: {{address.deliveryaddress }}</li>
+							{% endfor %}
+							
+							<li class='orderplaced' id='statusli_{{order.id}}' value="{{order.status}}">
+								{% if order.orderstatus == 'orderplaced' %}
+									Order Status:{{order.orderstatus}}		
+
+								{% elif order.orderstatus == 'Food Prepared' %}
+									Order Status:{{order.orderstatus}}	
+								{% elif order.orderstatus == 'Order Delivered' %}
+									Order Status:{{order.orderstatus}}	
+								{% else %}
+								{% endif %}	
+								</li>
+							
+														
+
+
+							<li style='margin-top: 5px'> New Status:
+								<BUTTON class='btn btn-warning' style='height:30px' onclick='statuschange("{{order.id}}","foodprepared")'>Food Prepared </BUTTON>
+								<BUTTON class='btn btn-success' onclick='statuschange("{{order.id}}","orderdelivered")' style='height:30px'>Order Delivered</BUTTON>
+						
+						</ul> 
+					</div>
+					<div class='col-md-4'>
+						<ul style="overflow:hidden;font-style:bold;font-size: 18px;color:black " class='list-unstyled'>
+							{% for i in order.ordersitems_set.all %}
+								<li style='display: inline;'>{{i.dish.dishname}},</li>
+							{% endfor %}
+						</ul>
+						<ul style="overflow:hidden;font-style:bold;font-size: 18px;color:black" class='list-unstyled'>
+							<li style=''>Total Price: Rs {{order.totalpricetax}}</li>
+						</ul>
+					</div> 
+				</div>
+			</div>
+
+			
+			{% endfor %}
+{% endif %}

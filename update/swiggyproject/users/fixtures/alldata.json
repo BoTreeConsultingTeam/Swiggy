@@ -1,0 +1,1385 @@
+[
+  {
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "app_label": "users",
+      "model": "customuser"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "app_label": "users",
+      "model": "deliveryaddress"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "app_label": "city_and_state",
+      "model": "state"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "app_label": "city_and_state",
+      "model": "city"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "app_label": "restaurant",
+      "model": "restaurant"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "app_label": "dishes",
+      "model": "dishestype"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "app_label": "dishes",
+      "model": "dishes"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "app_label": "cart_and_orders",
+      "model": "orders"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "app_label": "cart_and_orders",
+      "model": "ordersitems"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "app_label": "cart_and_orders",
+      "model": "deliveryaddress"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "app_label": "cart_and_orders",
+      "model": "cart"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "expire_date": "2019-06-03T09:46:04.102Z",
+      "session_data": "YzIxODQ5OGUyNjFlYjAxZjM4ZjIwM2I1YmQzZGQ0YmNkMTgzNTMxZDp7Il9hdXRoX3VzZXJfaWQiOiIxNSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiZTJiYzE0ODM2YjM3ZDM5NTFjZWQwM2IyYzdiYjA3ZGJhYWYzNzk3ZCJ9"
+    },
+    "model": "sessions.session",
+    "pk": "cfblnx9j5hp4xq5k1bc9jz0hxwn3gh4a"
+  },
+  {
+    "fields": {
+      "expire_date": "2019-06-05T13:08:13.312Z",
+      "session_data": "YzIxODQ5OGUyNjFlYjAxZjM4ZjIwM2I1YmQzZGQ0YmNkMTgzNTMxZDp7Il9hdXRoX3VzZXJfaWQiOiIxNSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiZTJiYzE0ODM2YjM3ZDM5NTFjZWQwM2IyYzdiYjA3ZGJhYWYzNzk3ZCJ9"
+    },
+    "model": "sessions.session",
+    "pk": "gu343fbgr2sl89pa4qzkphsykdu4bgwp"
+  },
+  {
+    "fields": {
+      "expire_date": "2019-06-11T10:13:33.004Z",
+      "session_data": "ZmYwN2Y1ZjE2Y2YyZWFmNjhjMGIyODU3NWRhNDQ2Y2Q0NTJhNmNjYzp7Il9hdXRoX3VzZXJfaWQiOiIyMCIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiOGNmYzcxNmFlNjdkY2M2ZWNkMTEzMGYzNDE3YTc1ZDE1NmY3MWU1MCJ9"
+    },
+    "model": "sessions.session",
+    "pk": "h75t0z5i44k14gt6yw74o1wok778m21v"
+  },
+  {
+    "fields": {
+      "expire_date": "2019-06-03T09:45:58.477Z",
+      "session_data": "YzIxODQ5OGUyNjFlYjAxZjM4ZjIwM2I1YmQzZGQ0YmNkMTgzNTMxZDp7Il9hdXRoX3VzZXJfaWQiOiIxNSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiZTJiYzE0ODM2YjM3ZDM5NTFjZWQwM2IyYzdiYjA3ZGJhYWYzNzk3ZCJ9"
+    },
+    "model": "sessions.session",
+    "pk": "l3y8m0bkzyqwlc0clkmpdi6jjhqnqsys"
+  },
+  {
+    "fields": {
+      "expire_date": "2019-06-03T09:45:58.656Z",
+      "session_data": "YzIxODQ5OGUyNjFlYjAxZjM4ZjIwM2I1YmQzZGQ0YmNkMTgzNTMxZDp7Il9hdXRoX3VzZXJfaWQiOiIxNSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiZTJiYzE0ODM2YjM3ZDM5NTFjZWQwM2IyYzdiYjA3ZGJhYWYzNzk3ZCJ9"
+    },
+    "model": "sessions.session",
+    "pk": "lbir5w77zvyfyvmgr087l5is122rdw56"
+  },
+  {
+    "fields": {
+      "statename": "Gujarat"
+    },
+    "model": "city_and_state.state",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "statename": "Maharashtra"
+    },
+    "model": "city_and_state.state",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "cityname": "ahmedabad",
+      "state": 1
+    },
+    "model": "city_and_state.city",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "cityname": "baroda",
+      "state": 1
+    },
+    "model": "city_and_state.city",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "cityname": "Mumbai",
+      "state": 2
+    },
+    "model": "city_and_state.city",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "cityname": "Pune",
+      "state": 2
+    },
+    "model": "city_and_state.city",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "cityname": "Gandhinagar",
+      "state": 1
+    },
+    "model": "city_and_state.city",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "dish_type_name": "Punjabi"
+    },
+    "model": "dishes.dishestype",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "dish_type_name": "Pizza"
+    },
+    "model": "dishes.dishestype",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "dish_type_name": "chinese"
+    },
+    "model": "dishes.dishestype",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "dish_type_name": "PaniPuri"
+    },
+    "model": "dishes.dishestype",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "dish_type_name": "Sandwich"
+    },
+    "model": "dishes.dishestype",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "dish_type": 1,
+      "dishinfo": "Chole",
+      "dishname": "Chole",
+      "img": "images/chole_t6BEMnA.jpeg",
+      "price": "300",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "dish_type": 5,
+      "dishinfo": "grilled sandwich",
+      "dishname": "grilled sandwich",
+      "img": "images/sandwich4_CNVQkSY.jpeg",
+      "price": "200",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "dish_type": 4,
+      "dishinfo": "panipuri",
+      "dishname": "panipuri",
+      "img": "images/panipuri6_52mdm5b.jpeg",
+      "price": "30",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "dish_type": 3,
+      "dishinfo": "manchurian",
+      "dishname": "manchurian",
+      "img": "images/chinese2_a1dC9qT.jpg",
+      "price": "200",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "dish_type": 4,
+      "dishinfo": "dahi puri",
+      "dishname": "Dahi Puri",
+      "img": "images/panipuri3.jpeg",
+      "price": "50",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "dish_type": 5,
+      "dishinfo": "Noodles",
+      "dishname": "Noodles",
+      "img": "images/chinese3.jpeg",
+      "price": "300",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "dish_type": 5,
+      "dishinfo": "cheese sandwich",
+      "dishname": "cheese sandwich",
+      "img": "images/sandwich3_thAJetD.jpeg",
+      "price": "300",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "dish_type": 1,
+      "dishinfo": "Fix Punjabi Thali",
+      "dishname": "Fix Punjabi Thali",
+      "img": "images/punjabi2_loBXAuG.jpeg",
+      "price": "300",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "dish_type": 1,
+      "dishinfo": "punjabi",
+      "dishname": "punjabi",
+      "img": "images/punjabi1_iJxiujS.jpg",
+      "price": "200",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "dish_type": 2,
+      "dishinfo": "margreta",
+      "dishname": "margreta",
+      "img": "images/pizza1_JV4PBfr.jpg",
+      "price": "200",
+      "restaurant": 30,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "dish": 16,
+      "orders": 29,
+      "quantity": "2",
+      "totalprice": "300"
+    },
+    "model": "cart_and_orders.ordersitems",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "dish": 15,
+      "orders": 29,
+      "quantity": "2",
+      "totalprice": "50"
+    },
+    "model": "cart_and_orders.ordersitems",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "dish": 20,
+      "orders": 30,
+      "quantity": "2",
+      "totalprice": "200"
+    },
+    "model": "cart_and_orders.ordersitems",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "deliveryaddress": "abd",
+      "orders": 29
+    },
+    "model": "cart_and_orders.deliveryaddress",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "deliveryaddress": "Shastri Nagar",
+      "orders": 30
+    },
+    "model": "cart_and_orders.deliveryaddress",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "codename": "add_logentry",
+      "content_type": 1,
+      "name": "Can add log entry"
+    },
+    "model": "auth.permission",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "codename": "change_logentry",
+      "content_type": 1,
+      "name": "Can change log entry"
+    },
+    "model": "auth.permission",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "codename": "delete_logentry",
+      "content_type": 1,
+      "name": "Can delete log entry"
+    },
+    "model": "auth.permission",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "codename": "view_logentry",
+      "content_type": 1,
+      "name": "Can view log entry"
+    },
+    "model": "auth.permission",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "codename": "add_permission",
+      "content_type": 2,
+      "name": "Can add permission"
+    },
+    "model": "auth.permission",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "codename": "change_permission",
+      "content_type": 2,
+      "name": "Can change permission"
+    },
+    "model": "auth.permission",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "codename": "delete_permission",
+      "content_type": 2,
+      "name": "Can delete permission"
+    },
+    "model": "auth.permission",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "codename": "view_permission",
+      "content_type": 2,
+      "name": "Can view permission"
+    },
+    "model": "auth.permission",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "codename": "add_group",
+      "content_type": 3,
+      "name": "Can add group"
+    },
+    "model": "auth.permission",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "codename": "change_group",
+      "content_type": 3,
+      "name": "Can change group"
+    },
+    "model": "auth.permission",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "codename": "delete_group",
+      "content_type": 3,
+      "name": "Can delete group"
+    },
+    "model": "auth.permission",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "codename": "view_group",
+      "content_type": 3,
+      "name": "Can view group"
+    },
+    "model": "auth.permission",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "codename": "add_contenttype",
+      "content_type": 4,
+      "name": "Can add content type"
+    },
+    "model": "auth.permission",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "codename": "change_contenttype",
+      "content_type": 4,
+      "name": "Can change content type"
+    },
+    "model": "auth.permission",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "codename": "delete_contenttype",
+      "content_type": 4,
+      "name": "Can delete content type"
+    },
+    "model": "auth.permission",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "codename": "view_contenttype",
+      "content_type": 4,
+      "name": "Can view content type"
+    },
+    "model": "auth.permission",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "codename": "add_session",
+      "content_type": 5,
+      "name": "Can add session"
+    },
+    "model": "auth.permission",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "codename": "change_session",
+      "content_type": 5,
+      "name": "Can change session"
+    },
+    "model": "auth.permission",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "codename": "delete_session",
+      "content_type": 5,
+      "name": "Can delete session"
+    },
+    "model": "auth.permission",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "codename": "view_session",
+      "content_type": 5,
+      "name": "Can view session"
+    },
+    "model": "auth.permission",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "codename": "add_customuser",
+      "content_type": 6,
+      "name": "Can add user"
+    },
+    "model": "auth.permission",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "codename": "change_customuser",
+      "content_type": 6,
+      "name": "Can change user"
+    },
+    "model": "auth.permission",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "codename": "delete_customuser",
+      "content_type": 6,
+      "name": "Can delete user"
+    },
+    "model": "auth.permission",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "codename": "view_customuser",
+      "content_type": 6,
+      "name": "Can view user"
+    },
+    "model": "auth.permission",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "codename": "add_deliveryaddress",
+      "content_type": 7,
+      "name": "Can add delivery address"
+    },
+    "model": "auth.permission",
+    "pk": 25
+  },
+  {
+    "fields": {
+      "codename": "change_deliveryaddress",
+      "content_type": 7,
+      "name": "Can change delivery address"
+    },
+    "model": "auth.permission",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "codename": "delete_deliveryaddress",
+      "content_type": 7,
+      "name": "Can delete delivery address"
+    },
+    "model": "auth.permission",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "codename": "view_deliveryaddress",
+      "content_type": 7,
+      "name": "Can view delivery address"
+    },
+    "model": "auth.permission",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "codename": "add_state",
+      "content_type": 8,
+      "name": "Can add state"
+    },
+    "model": "auth.permission",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "codename": "change_state",
+      "content_type": 8,
+      "name": "Can change state"
+    },
+    "model": "auth.permission",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "codename": "delete_state",
+      "content_type": 8,
+      "name": "Can delete state"
+    },
+    "model": "auth.permission",
+    "pk": 31
+  },
+  {
+    "fields": {
+      "codename": "view_state",
+      "content_type": 8,
+      "name": "Can view state"
+    },
+    "model": "auth.permission",
+    "pk": 32
+  },
+  {
+    "fields": {
+      "codename": "add_city",
+      "content_type": 9,
+      "name": "Can add city"
+    },
+    "model": "auth.permission",
+    "pk": 33
+  },
+  {
+    "fields": {
+      "codename": "change_city",
+      "content_type": 9,
+      "name": "Can change city"
+    },
+    "model": "auth.permission",
+    "pk": 34
+  },
+  {
+    "fields": {
+      "codename": "delete_city",
+      "content_type": 9,
+      "name": "Can delete city"
+    },
+    "model": "auth.permission",
+    "pk": 35
+  },
+  {
+    "fields": {
+      "codename": "view_city",
+      "content_type": 9,
+      "name": "Can view city"
+    },
+    "model": "auth.permission",
+    "pk": 36
+  },
+  {
+    "fields": {
+      "codename": "add_restaurant",
+      "content_type": 10,
+      "name": "Can add restaurant"
+    },
+    "model": "auth.permission",
+    "pk": 37
+  },
+  {
+    "fields": {
+      "codename": "change_restaurant",
+      "content_type": 10,
+      "name": "Can change restaurant"
+    },
+    "model": "auth.permission",
+    "pk": 38
+  },
+  {
+    "fields": {
+      "codename": "delete_restaurant",
+      "content_type": 10,
+      "name": "Can delete restaurant"
+    },
+    "model": "auth.permission",
+    "pk": 39
+  },
+  {
+    "fields": {
+      "codename": "view_restaurant",
+      "content_type": 10,
+      "name": "Can view restaurant"
+    },
+    "model": "auth.permission",
+    "pk": 40
+  },
+  {
+    "fields": {
+      "codename": "add_dishestype",
+      "content_type": 11,
+      "name": "Can add dishes type"
+    },
+    "model": "auth.permission",
+    "pk": 41
+  },
+  {
+    "fields": {
+      "codename": "change_dishestype",
+      "content_type": 11,
+      "name": "Can change dishes type"
+    },
+    "model": "auth.permission",
+    "pk": 42
+  },
+  {
+    "fields": {
+      "codename": "delete_dishestype",
+      "content_type": 11,
+      "name": "Can delete dishes type"
+    },
+    "model": "auth.permission",
+    "pk": 43
+  },
+  {
+    "fields": {
+      "codename": "view_dishestype",
+      "content_type": 11,
+      "name": "Can view dishes type"
+    },
+    "model": "auth.permission",
+    "pk": 44
+  },
+  {
+    "fields": {
+      "codename": "add_dishes",
+      "content_type": 12,
+      "name": "Can add dishes"
+    },
+    "model": "auth.permission",
+    "pk": 45
+  },
+  {
+    "fields": {
+      "codename": "change_dishes",
+      "content_type": 12,
+      "name": "Can change dishes"
+    },
+    "model": "auth.permission",
+    "pk": 46
+  },
+  {
+    "fields": {
+      "codename": "delete_dishes",
+      "content_type": 12,
+      "name": "Can delete dishes"
+    },
+    "model": "auth.permission",
+    "pk": 47
+  },
+  {
+    "fields": {
+      "codename": "view_dishes",
+      "content_type": 12,
+      "name": "Can view dishes"
+    },
+    "model": "auth.permission",
+    "pk": 48
+  },
+  {
+    "fields": {
+      "codename": "add_orders",
+      "content_type": 13,
+      "name": "Can add orders"
+    },
+    "model": "auth.permission",
+    "pk": 49
+  },
+  {
+    "fields": {
+      "codename": "change_orders",
+      "content_type": 13,
+      "name": "Can change orders"
+    },
+    "model": "auth.permission",
+    "pk": 50
+  },
+  {
+    "fields": {
+      "codename": "delete_orders",
+      "content_type": 13,
+      "name": "Can delete orders"
+    },
+    "model": "auth.permission",
+    "pk": 51
+  },
+  {
+    "fields": {
+      "codename": "view_orders",
+      "content_type": 13,
+      "name": "Can view orders"
+    },
+    "model": "auth.permission",
+    "pk": 52
+  },
+  {
+    "fields": {
+      "codename": "add_ordersitems",
+      "content_type": 14,
+      "name": "Can add orders items"
+    },
+    "model": "auth.permission",
+    "pk": 53
+  },
+  {
+    "fields": {
+      "codename": "change_ordersitems",
+      "content_type": 14,
+      "name": "Can change orders items"
+    },
+    "model": "auth.permission",
+    "pk": 54
+  },
+  {
+    "fields": {
+      "codename": "delete_ordersitems",
+      "content_type": 14,
+      "name": "Can delete orders items"
+    },
+    "model": "auth.permission",
+    "pk": 55
+  },
+  {
+    "fields": {
+      "codename": "view_ordersitems",
+      "content_type": 14,
+      "name": "Can view orders items"
+    },
+    "model": "auth.permission",
+    "pk": 56
+  },
+  {
+    "fields": {
+      "codename": "add_deliveryaddress",
+      "content_type": 15,
+      "name": "Can add delivery address"
+    },
+    "model": "auth.permission",
+    "pk": 57
+  },
+  {
+    "fields": {
+      "codename": "change_deliveryaddress",
+      "content_type": 15,
+      "name": "Can change delivery address"
+    },
+    "model": "auth.permission",
+    "pk": 58
+  },
+  {
+    "fields": {
+      "codename": "delete_deliveryaddress",
+      "content_type": 15,
+      "name": "Can delete delivery address"
+    },
+    "model": "auth.permission",
+    "pk": 59
+  },
+  {
+    "fields": {
+      "codename": "view_deliveryaddress",
+      "content_type": 15,
+      "name": "Can view delivery address"
+    },
+    "model": "auth.permission",
+    "pk": 60
+  },
+  {
+    "fields": {
+      "codename": "add_cart",
+      "content_type": 16,
+      "name": "Can add cart"
+    },
+    "model": "auth.permission",
+    "pk": 61
+  },
+  {
+    "fields": {
+      "codename": "change_cart",
+      "content_type": 16,
+      "name": "Can change cart"
+    },
+    "model": "auth.permission",
+    "pk": 62
+  },
+  {
+    "fields": {
+      "codename": "delete_cart",
+      "content_type": 16,
+      "name": "Can delete cart"
+    },
+    "model": "auth.permission",
+    "pk": 63
+  },
+  {
+    "fields": {
+      "codename": "view_cart",
+      "content_type": 16,
+      "name": "Can view cart"
+    },
+    "model": "auth.permission",
+    "pk": 64
+  },
+  {
+    "fields": {
+      "address": "",
+      "city": 1,
+      "contact": null,
+      "count": "0",
+      "date_joined": "2019-05-27T10:25:43.222Z",
+      "email": "meet@gmail.com",
+      "first_name": "",
+      "groups": [],
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "last_login": "2019-05-27T10:27:06.768Z",
+      "last_name": "",
+      "ownnershipstatus": "normaluser",
+      "password": "pbkdf2_sha256$150000$a6et00QDedwM$XTxevs/RgmsLTyBVm4o5KObdgtjU1fIIkO6mca89dCA=",
+      "pincode": null,
+      "state": 1,
+      "user_permissions": [],
+      "username": "meet"
+    },
+    "model": "users.customuser",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "address": "sabarmati",
+      "city": 1,
+      "contact": 123456789,
+      "count": "4",
+      "date_joined": "2019-05-27T10:29:45.621Z",
+      "email": "mayur@gmail.com",
+      "first_name": "mayur",
+      "groups": [],
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "last_login": "2019-05-27T10:42:15.595Z",
+      "last_name": "prajapati",
+      "ownnershipstatus": "approved",
+      "password": "pbkdf2_sha256$150000$rThudk7McqVL$mhFHxWSf3pMFKm8pmobEIkTi3pudh1XDTun5I174bI0=",
+      "pincode": 123456,
+      "state": 1,
+      "user_permissions": [],
+      "username": "mayur"
+    },
+    "model": "users.customuser",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "address": "Shastri Nagar",
+      "city": 1,
+      "contact": 123456789,
+      "count": "4",
+      "date_joined": "2019-05-27T10:30:40.113Z",
+      "email": "binoy@gmail.com",
+      "first_name": "binoy",
+      "groups": [],
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "last_login": "2019-05-28T10:13:32.992Z",
+      "last_name": "oza",
+      "ownnershipstatus": "approved",
+      "password": "pbkdf2_sha256$150000$SUGpFOlkfd07$FeTjmIGnb9j733g1NpQM+D/3/Pgx6T/lI8Nvys3zXcU=",
+      "pincode": 123456,
+      "state": 1,
+      "user_permissions": [],
+      "username": "binoy"
+    },
+    "model": "users.customuser",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "address": "pune",
+      "city": 6,
+      "contact": 123456789,
+      "count": "0",
+      "date_joined": "2019-05-27T10:34:05.177Z",
+      "email": "jazz@gmail.com",
+      "first_name": "jazz",
+      "groups": [],
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "last_login": "2019-05-27T10:58:29.957Z",
+      "last_name": "shah",
+      "ownnershipstatus": "normaluser",
+      "password": "pbkdf2_sha256$150000$PnkG9SSgjFVt$ZeoLvPtvWQMYdXGSLB0gtmd4glWbnuj433MU7ACLiVk=",
+      "pincode": 789456,
+      "state": 2,
+      "user_permissions": [],
+      "username": "jazz"
+    },
+    "model": "users.customuser",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "address": "zydus",
+      "city": 1,
+      "contact": 123456789,
+      "count": "0",
+      "date_joined": "2019-05-27T10:34:55.760Z",
+      "email": "rudra@gmail.com",
+      "first_name": "rudra",
+      "groups": [],
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "last_login": "2019-05-27T10:48:11.520Z",
+      "last_name": "thakkar",
+      "ownnershipstatus": "applied",
+      "password": "pbkdf2_sha256$150000$3YhcRfXLzAk9$8tFOKJ7u2pGc4yXBtug4EhNjvOeKDKkPj7F//33I6GM=",
+      "pincode": 789456,
+      "state": 1,
+      "user_permissions": [],
+      "username": "rudra"
+    },
+    "model": "users.customuser",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "address": "baroda",
+      "city": 4,
+      "contact": 123456789,
+      "count": "0",
+      "date_joined": "2019-05-27T10:35:52.622Z",
+      "email": "jaimin@gmail.com",
+      "first_name": "jaimin",
+      "groups": [],
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "last_login": null,
+      "last_name": "shah",
+      "ownnershipstatus": "normaluser",
+      "password": "pbkdf2_sha256$150000$CiRXF9PIMMca$dhhA4a0zjTEIcv4TI9upoavIV14hhcSOshWpDQAFHMU=",
+      "pincode": 123415,
+      "state": 1,
+      "user_permissions": [],
+      "username": "jaimin"
+    },
+    "model": "users.customuser",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "address": "Pragati Nagar",
+      "bank_account_no": "46621238892",
+      "city": 1,
+      "flag": "1",
+      "img": "images/chole.jpeg",
+      "ownername": "Binoy",
+      "restaurantname": "Honest",
+      "state": 1,
+      "user": 20
+    },
+    "model": "restaurant.restaurant",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "address": "sec-2",
+      "bank_account_no": "7855425325",
+      "city": 7,
+      "flag": "1",
+      "img": "images/pizza_5DSWC0t.jpg",
+      "ownername": "Binoy",
+      "restaurantname": "Pizza Hut",
+      "state": 1,
+      "user": 20
+    },
+    "model": "restaurant.restaurant",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "address": "sec 3",
+      "bank_account_no": "78645256656",
+      "city": 7,
+      "flag": "1",
+      "img": "images/chinese5.jpeg",
+      "ownername": "Binoy",
+      "restaurantname": "Chinese",
+      "state": 1,
+      "user": 20
+    },
+    "model": "restaurant.restaurant",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "address": "iskon",
+      "bank_account_no": "78946515",
+      "city": 1,
+      "flag": "1",
+      "img": "images/pizza2_TWm70wL.jpeg",
+      "ownername": "Binoy",
+      "restaurantname": "Pizza Hut1",
+      "state": 1,
+      "user": 20
+    },
+    "model": "restaurant.restaurant",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "address": "andheri",
+      "bank_account_no": "789942255",
+      "city": 5,
+      "flag": "1",
+      "img": "images/pizza3_VjLwRh0.jpeg",
+      "ownername": "Mayur",
+      "restaurantname": "Dominos",
+      "state": 2,
+      "user": 19
+    },
+    "model": "restaurant.restaurant",
+    "pk": 31
+  },
+  {
+    "fields": {
+      "address": "income tax",
+      "bank_account_no": "765169681698",
+      "city": 1,
+      "flag": "1",
+      "img": "images/chinese4.jpeg",
+      "ownername": "Mayur",
+      "restaurantname": "chinese",
+      "state": 1,
+      "user": 19
+    },
+    "model": "restaurant.restaurant",
+    "pk": 32
+  },
+  {
+    "fields": {
+      "address": "sec 21",
+      "bank_account_no": "64644661646",
+      "city": 7,
+      "flag": "1",
+      "img": "images/panipuri6.jpeg",
+      "ownername": "Mayur",
+      "restaurantname": "Pooja",
+      "state": 1,
+      "user": 19
+    },
+    "model": "restaurant.restaurant",
+    "pk": 33
+  },
+  {
+    "fields": {
+      "address": "science city,sola",
+      "bank_account_no": "789252552",
+      "city": 1,
+      "flag": "1",
+      "img": "images/sandwich1.jpeg",
+      "ownername": "Mayur",
+      "restaurantname": "Shakti Sandwich",
+      "state": 1,
+      "user": 19
+    },
+    "model": "restaurant.restaurant",
+    "pk": 34
+  },
+  {
+    "fields": {
+      "address": "shastri nagar",
+      "bank_account_no": "78954223",
+      "city": 1,
+      "flag": "0",
+      "img": "images/punjabi1.jpg",
+      "ownername": "Jazz",
+      "restaurantname": "Lapinos",
+      "state": 1,
+      "user": 19
+    },
+    "model": "restaurant.restaurant",
+    "pk": 35
+  },
+  {
+    "fields": {
+      "address": "sec 22",
+      "bank_account_no": "8761656461",
+      "city": 7,
+      "flag": "0",
+      "img": "images/punjabi2.jpeg",
+      "ownername": "Rudra",
+      "restaurantname": "Kum Kum",
+      "state": 1,
+      "user": 22
+    },
+    "model": "restaurant.restaurant",
+    "pk": 36
+  },
+  {
+    "fields": {
+      "orderdate": "2019-05-27T10:59:36.478Z",
+      "orderstatus": "orderplaced",
+      "restaurant": 27,
+      "totalpricetax": "735.0",
+      "user": 21
+    },
+    "model": "cart_and_orders.orders",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "orderdate": "2019-05-27T11:02:42.557Z",
+      "orderstatus": "Order Delivered",
+      "restaurant": 30,
+      "totalpricetax": "420.0",
+      "user": 20
+    },
+    "model": "cart_and_orders.orders",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "action_time": "2019-05-27T10:27:50.484Z",
+      "change_message": "[{\"added\": {}}]",
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "baroda",
+      "user": 18
+    },
+    "model": "admin.logentry",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "action_time": "2019-05-27T10:28:02.463Z",
+      "change_message": "[{\"added\": {}}]",
+      "content_type": 9,
+      "object_id": "5",
+      "object_repr": "Mumbai",
+      "user": 18
+    },
+    "model": "admin.logentry",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "action_time": "2019-05-27T10:28:11.428Z",
+      "change_message": "[{\"added\": {}}]",
+      "content_type": 9,
+      "object_id": "6",
+      "object_repr": "Pune",
+      "user": 18
+    },
+    "model": "admin.logentry",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "action_flag": 1,
+      "action_time": "2019-05-27T10:28:19.281Z",
+      "change_message": "[{\"added\": {}}]",
+      "content_type": 9,
+      "object_id": "7",
+      "object_repr": "Gandhinagar",
+      "user": 18
+    },
+    "model": "admin.logentry",
+    "pk": 12
+  }
+]

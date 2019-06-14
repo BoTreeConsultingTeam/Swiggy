@@ -1,0 +1,50 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}
+    Order
+{% endblock %}
+
+{% block content %}
+<div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-time"></i></span>
+            <h5>Order  List</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Image </th>
+                  <th>Dish Name</th>
+                  <th>Restaurant Name</th>
+                  <th>Vegor Non Veg</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                {% for orderitems in order_list%}
+                <tr>
+                  <td class="taskDesc">{{orderitems.orders.user.first_name}} {{orderitems.orders.user.last_name}} </td>
+                  <td class="taskDesc"><img src="{{orderitems.dish.img.url}}" width="100px" height='100px' /></td>
+                  <td class="taskDesc">{{orderitems.dish.dishname}}</td>
+                  <td class="taskDesc">{{orderitems.orders.restaurant.restaurantname}}</td>
+                  
+                  <td class="taskDesc">{{orderitems.dish.veg_or_nonveg}}</td>
+                  <td class="taskDesc">{{orderitems.quantity}}</td>
+                   <td class="taskDesc">{{orderitems.dish.price}}</td>
+                 
+                  <td class="taskOptions">
+                    <a href="{% url 'adminorderupdate' orderitems.id %}" class="tip-top" data-original-title="Update"><i class="icon-pencil"></i></a> 
+                    <a href="{% url 'adminorderdelete' orderitems.id %}" class="tip-top" data-original-title="Delete"><i class="icon-remove"></i></a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+  <div class="site-section">
+      <div class='container'>
+          <div class='row mb-3'>
+            
+          <form  class='col-md-12' action="" id='form1' method='post'  style='float: left;width:100%'>
+              {% csrf_token %}
+            <div class='col-md-6' style='float: left;width:60%'>
+             <div class="site-blocks-table">
+              <table class="table table-bordered " style='border:0px ; border-color: transparent;text-align: left'>
+                <thead>
+                  <tr><th colspan="2"> <h3>Your Details</h3></th></tr>
+                  {% for persondata in person %}
+                  <tr>
+                     <td >
+                      <h6 >Name</h6>
+                    </td>
+                    <td class="product-name">
+                      <h6>{{persondata.first_name}}  {{persondata.last_name}} </h6>
+                    </td>
+                  </tr>
+
+                  <tr>
+                     <td >
+                      <h6 >Contact</h6>
+                    </td>
+                    <td class="product-name">
+                      <h6>{{persondata.contact}} </h6>
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td >
+                      <h6 >Email</h6>
+                    </td>
+                    <td class="product-name">
+                      <h6>{{persondata.email}} </h6>
+                    </td>
+                  </tr>
+
+                  <tr>
+                     <td >
+                      <h6 >Address</h6>
+                    </td>
+                    <td class="product-name">
+                      <textarea name='deliveryaddress' style="width:400px">{{persondata.address}}</textarea>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                  
+                 
+                </thead>
+              </table>
+            </div>
+          </div>
+          <div class='col-md-6' style='float: right;width:40%'>
+            <div class="site-blocks-table">
+            <table class="table table-bordered" style='border:0px ; border-color: transparent;text-align: left'>
+                    <thead>
+                      <th>Product</th>
+                      <th>Total</th>
+                    </thead>
+                    <tbody>
+                      {% for x,y in data %}
+                      <tr>
+                        <td>{{x.dish.dishname}} <strong class="mx-2">x</strong>{{x.quantity}}</td>
+                        <td>Rs {{y}}</td>
+                      </tr>
+                      {% endfor %}
+                     
+                      
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+                        <td class="text-black font-weight-bold"><strong>Rs {{tot_tax}}</strong></td>
+                      </tr>
+                       <tr><td colspan="2"> 
+                    
+                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                   data-key="pk_test_7pBdSqgpqsTaSFlSyUUpwDjs006ESGA2xU"
+                   data-description="Pay for your order"
+                   data-amount={{tot_tax_dol}}
+                   data-locale="auto">
+                 </script>
+                 
+                  </td>
+                  </tr>
+                      <tr><td colspan="3"> 
+                        <input type="submit" name="cod" value='proceed to pay with COD'>
+                  </td>
+                  </tr>
+                 
+                    </tbody>
+                  </table>
+                </div>
+          </div>
+          </form>
+
+       
+        </div>
+      </div>
+        </div>     
+{% endblock %}

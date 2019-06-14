@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+
+
+<div class='container' style='margin-top:15px '>
+	<div class='row'>
+		<div class='col-md-3'>
+			<h2  style='font-style:bold;color:black'>Restaurant Name:</h2>
+			<ul class='list-unstyled'  id='myid' style='font-size: 20px;margin-top:10px;color:black;font-style: bold'>
+				{% for rname in resname %}
+					<li id='resis_{{rname.id}}' value='{{rname.id}}' style='font-size: 25px;cursor: pointer;	'
+					 onclick="reschange('{{rname.id}}')" >{{rname.restaurantname}}</li>
+				{% endfor %}
+			</ul>	
+		</div>	
+		<div class='col-md-9' id='maindiv' >
+			<h2 style='font-style:bold;color:black'>Orders:</h2>
+			{% for order in orderobject %}
+			<div class='container' style='border:1px solid black;box-sizing: content-box;margin-top:18px'>
+				<div class='row'>
+					<div class='col-md-8'>
+						<ul class='list-unstyled' style='font-style:bold;font-size: 18px;color:black'>
+							<li style='font-size: 25px' id='orderid_{{order.id}}'>
+							<a href="/cart_and_orders/recieveorderdetails?id={{order.id}}"  id='orderid_{{order.id}}' style='color:black'>Order No: #00{{order.id}}
+							</a></li>
+							<div id='tooltip_{{order.id}}' style='display:none;width:150px;background-color: #5cb85c;border-color:#4cae4c;text-align: center'> View Details</div>
+							<li style=''>Name: {{order.user.first_name}}  {{order.user.last_name}}</li>
+							{% for address in order.deliveryaddress_set.all %}
+							<li>Delivery Address: {{address.deliveryaddress }}</li>
+							{% endfor %}
+							
+							<li class='orderplaced' id='statusli_{{order.id}}' value="{{order.status}}">
+								{% if order.orderstatus == 'orderplaced' %}
+									Order Status:{{order.orderstatus}}		
+
+								{% elif order.orderstatus == 'Food Prepared' %}
+									Order Status:{{order.orderstatus}}	
+								{% elif order.orderstatus == 'Order Delivered' %}
+									Order Status:{{order.orderstatus}}	
+								{% else %}
+								{% endif %}	
+								</li>
+							
+														
+
+
+							<li style='margin-top: 5px'> New Status:
+								<BUTTON class='btn btn-warning' style='height:30px' onclick='statuschange("{{order.id}}","foodprepared")'>Food Prepared </BUTTON>
+								<BUTTON class='btn btn-success' onclick='statuschange("{{order.id}}","orderdelivered")' style='height:30px'>Order Delivered</BUTTON>
+						
+						</ul> 
+					</div>
+					<div class='col-md-4'>
+						<ul style="overflow:hidden;font-style:bold;font-size: 18px;color:black " class='list-unstyled'>
+							{% for i in order.ordersitems_set.all %}
+								<li style='display: inline;'>{{i.dish.dishname}},</li>
+							{% endfor %}
+						</ul>
+						<ul style="overflow:hidden;font-style:bold;font-size: 18px;color:black" class='list-unstyled'>
+							<li style=''>Total Price: Rs {{order.totalpricetax}}</li>
+						</ul>
+					</div> 
+				</div>
+			</div>
+
+			
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block javascript %}
+<script type="text/javascript">
+	function statuschange(id,status){
+		var orderid=id;
+		var status1=status;
+		var url='{% url "orderstatusupdate" %}';
+		console.log('orderid='+orderid+" "+'status1='+status1);
+		$.ajax({
+
+		url: url, 
+        type:'GET',                   // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'orderid': orderid,
+          'status1':status,
+                // add the country id to the GET parameters
+        },
+        success:function(data){
+        	status=data.status
+        	console.log(status)
+        	document.getElementById("statusli_"+orderid).innerHTML = 'Order Status:'+status
+        	if(status=='Food Prepared'){
+        		console.log('foof');
+        		$('#statusli_'+orderid).removeClass('orderplaced');
+        		$('#statusli_'+orderid).removeClass('orderdelivered');
+
+        		$('#statusli_'+orderid).addClass('foodprepared');
+        	}
+        	else if(status=='Order Delivered')
+        	{
+        		console.log('order');
+        		$('#statusli_'+orderid).removeClass('orderplaced');
+        		$('#statusli_'+orderid).removeClass('foodprepared');
+
+        		$('#statusli_'+orderid).addClass('orderdelivered');
+        	}
+        	else
+        	{
+        		
+
+        	}
+        	
+        }
+		});
+	}
+</script>
+<script type="text/javascript">
+	{% for order in orderobject%}
+	var e = document.getElementById('orderid_{{order.id}}');
+	e.onmouseover = function() {
+		console.log('hi1');
+		document.getElementById('tooltip_{{order.id}}').style.display = 'block';
+	}
+	e.onmouseout = function() {
+		document.getElementById('tooltip_{{order.id}}').style.display = 'none';
+	}	
+	{% endfor %}
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		console.log('color');
+  		$('#resis_30').addClass('liactive');
+  		console.log('ready');
+  		{% for order in orderobject %}
+
+  		var a=document.getElementById('statusli_{{order.id}}').value;
+  		
+  		if(a =='Food Prepared'){
+        		$('#statusli_{{order.id}}').removeClass('orderplaced');
+        		$('#statusli_{{order.id}}').removeClass('orderdelivered');
+
+        		$('#statusli_{{order.id}}').addClass('foodprepared');
+        	}
+        	else if(a =='Order Delivered')
+        	{
+
+        		$('#statusli_{{order.id}}').removeClass('orderplaced');
+        		$('#statusli_{{order.id}}').removeClass('foodprepared');
+
+        		$('#statusli_{{order.id}}').addClass('orderdelivered');
+        	}
+        	else
+        	{
+        		$('#statusli_{{order.id}}').removeClass('orderdelivered');
+        		$('#statusli_{{order.id}}').removeClass('foodprepared');
+
+        		$('#statusli_{{order.id}}').addClass('orderplaced');
+
+        	}	
+        	{% endfor%}	
+  		
+});
+</script>
+<script type="text/javascript">
+		{% for rname in resname %}
+			 $('#resis_{{rname.id}}').click(function() 
+			    { 
+			     	  $('.liactive').removeClass('liactive');
+   					 $(this).addClass('liactive');				
+
+			    });
+		{% endfor %}
+</script>
+<script type="text/javascript">
+	
+	function reschange(id){
+		console.log('abak')
+		
+
+		var url = "{% url 'changerestaurantorder' %}" ; // get the url of the `load_cities` view
+      	console.log(url);
+      var resid = id;
+      console.log('123456') 
+      console.log(resid);
+
+      $.ajax({                       // initialize an AJAX request
+        url: url, 
+        type:'GET',                   // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'restaurantid': resid       // add the country id to the GET parameters
+        },
+        success: function (data) { 
+        	console.log('success');
+        	console.log(data);
+
+          // `data` is the return of the `load_cities` view function
+          $("#maindiv").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+	}
+	
+</script>
+{% endblock %}
+{% block css %}
+	<style>
+	.liactive{
+		background-color:orange;
+		color:blue;
+		padding-left: 20px; 
+	}
+	.foodprepared{
+		background-color:green;border-color:green;width:220px;color:white;
+	}
+	.orderdelivered{
+		background-color:red;border-color:red;width:220px;color:white;
+	}
+	.orderplaced{
+		background-color:blue;border-color:blue;width:220px;color:white;
+	}
+	</style>
+{% endblock %}

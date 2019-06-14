@@ -1,0 +1,604 @@
+[
+  {
+    "fields": {
+      "dish": 18,
+      "quantity": "1",
+      "restaurant": 27,
+      "user": 20
+    },
+    "model": "cart_and_orders.cart",
+    "pk": 148
+  },
+  {
+    "fields": {
+      "dish": 17,
+      "quantity": "3",
+      "restaurant": 27,
+      "user": 20
+    },
+    "model": "cart_and_orders.cart",
+    "pk": 149
+  },
+  {
+    "fields": {
+      "orderdate": "2019-05-27T10:59:36.478Z",
+      "orderstatus": "orderplaced",
+      "restaurant": 27,
+      "totalpricetax": "735.0",
+      "user": 21
+    },
+    "model": "cart_and_orders.orders",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "orderdate": "2019-05-27T11:02:42.557Z",
+      "orderstatus": "Order Delivered",
+      "restaurant": 30,
+      "totalpricetax": "420.0",
+      "user": 20
+    },
+    "model": "cart_and_orders.orders",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "dish": 16,
+      "orders": 29,
+      "quantity": "2",
+      "totalprice": "600"
+    },
+    "model": "cart_and_orders.ordersitems",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "dish": 15,
+      "orders": 29,
+      "quantity": "2",
+      "totalprice": "100"
+    },
+    "model": "cart_and_orders.ordersitems",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "dish": 20,
+      "orders": 30,
+      "quantity": "2",
+      "totalprice": "400"
+    },
+    "model": "cart_and_orders.ordersitems",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "deliveryaddress": "abd",
+      "orders": 29
+    },
+    "model": "cart_and_orders.deliveryaddress",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "deliveryaddress": "Shastri Nagar",
+      "orders": 30
+    },
+    "model": "cart_and_orders.deliveryaddress",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "dish_type_name": "Punjabi"
+    },
+    "model": "dishes.dishestype",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "dish_type_name": "Pizza"
+    },
+    "model": "dishes.dishestype",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "dish_type_name": "chinese"
+    },
+    "model": "dishes.dishestype",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "dish_type_name": "PaniPuri"
+    },
+    "model": "dishes.dishestype",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "dish_type_name": "Sandwich"
+    },
+    "model": "dishes.dishestype",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "dish_type": 1,
+      "dishinfo": "Chole",
+      "dishname": "Chole",
+      "img": "images/chole_t6BEMnA.jpeg",
+      "price": "300",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "dish_type": 5,
+      "dishinfo": "grilled sandwich",
+      "dishname": "grilled sandwich",
+      "img": "images/sandwich4_CNVQkSY.jpeg",
+      "price": "200",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "dish_type": 4,
+      "dishinfo": "panipuri",
+      "dishname": "panipuri",
+      "img": "images/panipuri6_52mdm5b.jpeg",
+      "price": "30",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "dish_type": 3,
+      "dishinfo": "manchurian",
+      "dishname": "manchurian",
+      "img": "images/chinese2_a1dC9qT.jpg",
+      "price": "200",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "dish_type": 4,
+      "dishinfo": "dahi puri",
+      "dishname": "Dahi Puri",
+      "img": "images/panipuri3.jpeg",
+      "price": "50",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "dish_type": 5,
+      "dishinfo": "Noodles",
+      "dishname": "Noodles",
+      "img": "images/chinese3.jpeg",
+      "price": "300",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "dish_type": 5,
+      "dishinfo": "cheese sandwich",
+      "dishname": "cheese sandwich",
+      "img": "images/sandwich3_thAJetD.jpeg",
+      "price": "300",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "dish_type": 1,
+      "dishinfo": "Fix Punjabi Thali",
+      "dishname": "Fix Punjabi Thali",
+      "img": "images/punjabi2_loBXAuG.jpeg",
+      "price": "300",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "dish_type": 1,
+      "dishinfo": "punjabi",
+      "dishname": "punjabi",
+      "img": "images/punjabi1_iJxiujS.jpg",
+      "price": "200",
+      "restaurant": 27,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "dish_type": 2,
+      "dishinfo": "margreta",
+      "dishname": "margreta",
+      "img": "images/pizza1_JV4PBfr.jpg",
+      "price": "200",
+      "restaurant": 30,
+      "veg_or_nonveg": "veg"
+    },
+    "model": "dishes.dishes",
+    "pk": 20
+  },
+   {
+    "model": "restaurant.restaurant",
+    "pk": 27,
+    "fields": {
+      "ownername": "Binoy",
+      "restaurantname": "Honest",
+      "bank_account_no": "46621238892",
+      "state": 1,
+      "city": 1,
+      "address": "Pragati Nagar",
+      "img": "images/chole.jpeg",
+      "user": 20,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 28,
+    "fields": {
+      "ownername": "Binoy",
+      "restaurantname": "Pizza Hut",
+      "bank_account_no": "7855425325",
+      "state": 1,
+      "city": 7,
+      "address": "sec-2",
+      "img": "images/pizza_5DSWC0t.jpg",
+      "user": 20,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 29,
+    "fields": {
+      "ownername": "Binoy",
+      "restaurantname": "Chinese",
+      "bank_account_no": "78645256656",
+      "state": 1,
+      "city": 7,
+      "address": "sec 3",
+      "img": "images/chinese5.jpeg",
+      "user": 20,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 30,
+    "fields": {
+      "ownername": "Binoy",
+      "restaurantname": "Pizza Hut1",
+      "bank_account_no": "78946515",
+      "state": 1,
+      "city": 1,
+      "address": "iskon",
+      "img": "images/pizza2_TWm70wL.jpeg",
+      "user": 20,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 31,
+    "fields": {
+      "ownername": "Mayur",
+      "restaurantname": "Dominos",
+      "bank_account_no": "789942255",
+      "state": 2,
+      "city": 5,
+      "address": "andheri",
+      "img": "images/pizza3_VjLwRh0.jpeg",
+      "user": 19,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 32,
+    "fields": {
+      "ownername": "Mayur",
+      "restaurantname": "chinese",
+      "bank_account_no": "765169681698",
+      "state": 1,
+      "city": 1,
+      "address": "income tax",
+      "img": "images/chinese4.jpeg",
+      "user": 19,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 33,
+    "fields": {
+      "ownername": "Mayur",
+      "restaurantname": "Pooja",
+      "bank_account_no": "64644661646",
+      "state": 1,
+      "city": 7,
+      "address": "sec 21",
+      "img": "images/panipuri6.jpeg",
+      "user": 19,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 34,
+    "fields": {
+      "ownername": "Mayur",
+      "restaurantname": "Shakti Sandwich",
+      "bank_account_no": "789252552",
+      "state": 1,
+      "city": 1,
+      "address": "science city,sola",
+      "img": "images/sandwich1.jpeg",
+      "user": 19,
+      "flag": "1"
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 18,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$a6et00QDedwM$XTxevs/RgmsLTyBVm4o5KObdgtjU1fIIkO6mca89dCA=",
+      "last_login": "2019-05-27T10:27:06.768Z",
+      "is_superuser": true,
+      "username": "meet",
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2019-05-27T10:25:43.222Z",
+      "email": "meet@gmail.com",
+      "contact": null,
+      "state": 1,
+      "city": 1,
+      "address": "",
+      "pincode": null,
+      "ownnershipstatus": "normaluser",
+      "count": "0",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 19,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$rThudk7McqVL$mhFHxWSf3pMFKm8pmobEIkTi3pudh1XDTun5I174bI0=",
+      "last_login": "2019-05-27T10:42:15.595Z",
+      "is_superuser": false,
+      "username": "mayur",
+      "first_name": "mayur",
+      "last_name": "prajapati",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-05-27T10:29:45.621Z",
+      "email": "mayur@gmail.com",
+      "contact": 123456789,
+      "state": 1,
+      "city": 1,
+      "address": "sabarmati",
+      "pincode": 123456,
+      "ownnershipstatus": "approved",
+      "count": "4",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 20,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$SUGpFOlkfd07$FeTjmIGnb9j733g1NpQM+D/3/Pgx6T/lI8Nvys3zXcU=",
+      "last_login": "2019-05-28T10:13:32.992Z",
+      "is_superuser": false,
+      "username": "binoy",
+      "first_name": "binoy",
+      "last_name": "oza",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-05-27T10:30:40.113Z",
+      "email": "binoy@gmail.com",
+      "contact": 123456789,
+      "state": 1,
+      "city": 1,
+      "address": "Shastri Nagar",
+      "pincode": 123456,
+      "ownnershipstatus": "approved",
+      "count": "4",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+    {
+    "fields": {
+      "address": "pune",
+      "city": 6,
+      "contact": 123456789,
+      "count": "0",
+      "date_joined": "2019-05-27T10:34:05.177Z",
+      "email": "jazz@gmail.com",
+      "first_name": "jazz",
+      "groups": [],
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "last_login": "2019-05-27T10:58:29.957Z",
+      "last_name": "shah",
+      "ownnershipstatus": "normaluser",
+      "password": "pbkdf2_sha256$150000$PnkG9SSgjFVt$ZeoLvPtvWQMYdXGSLB0gtmd4glWbnuj433MU7ACLiVk=",
+      "pincode": 789456,
+      "state": 2,
+      "user_permissions": [],
+      "username": "jazz"
+    },
+    "model": "users.customuser",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "address": "zydus",
+      "city": 1,
+      "contact": 123456789,
+      "count": "0",
+      "date_joined": "2019-05-27T10:34:55.760Z",
+      "email": "rudra@gmail.com",
+      "first_name": "rudra",
+      "groups": [],
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "last_login": "2019-05-27T10:48:11.520Z",
+      "last_name": "thakkar",
+      "ownnershipstatus": "applied",
+      "password": "pbkdf2_sha256$150000$3YhcRfXLzAk9$8tFOKJ7u2pGc4yXBtug4EhNjvOeKDKkPj7F//33I6GM=",
+      "pincode": 789456,
+      "state": 1,
+      "user_permissions": [],
+      "username": "rudra"
+    },
+    "model": "users.customuser",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "address": "baroda",
+      "city": 4,
+      "contact": 123456789,
+      "count": "0",
+      "date_joined": "2019-05-27T10:35:52.622Z",
+      "email": "jaimin@gmail.com",
+      "first_name": "jaimin",
+      "groups": [],
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "last_login": null,
+      "last_name": "shah",
+      "ownnershipstatus": "normaluser",
+      "password": "pbkdf2_sha256$150000$CiRXF9PIMMca$dhhA4a0zjTEIcv4TI9upoavIV14hhcSOshWpDQAFHMU=",
+      "pincode": 123415,
+      "state": 1,
+      "user_permissions": [],
+      "username": "jaimin"
+    },
+    "model": "users.customuser",
+    "pk": 23
+  },
+    {
+    "model": "users.customuser",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$SUGpFOlkfd07$FeTjmIGnb9j733g1NpQM+D/3/Pgx6T/lI8Nvys3zXcU=",
+      "last_login": "2019-05-28T10:13:32.992Z",
+      "is_superuser": false,
+      "username": "binoy1",
+      "first_name": "binoy",
+      "last_name": "oza",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-05-27T10:30:40.113Z",
+      "email": "binoy1@gmail.com",
+      "contact": 123456789,
+      "state": 1,
+      "city": 1,
+      "address": "Shastri Nagar",
+      "pincode": 123456,
+      "ownnershipstatus": "approved",
+      "count": "4",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "city_and_state.state",
+    "pk": 1,
+    "fields": {
+      "statename": "Gujarat"
+    }
+  },
+  {
+    "model": "city_and_state.state",
+    "pk": 2,
+    "fields": {
+      "statename": "Maharashtra"
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 1,
+    "fields": {
+      "cityname": "ahmedabad",
+      "state": 1
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 4,
+    "fields": {
+      "cityname": "baroda",
+      "state": 1
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 5,
+    "fields": {
+      "cityname": "Mumbai",
+      "state": 2
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 6,
+    "fields": {
+      "cityname": "Pune",
+      "state": 2
+    }
+  },
+  {
+    "model": "city_and_state.city",
+    "pk": 7,
+    "fields": {
+      "cityname": "Gandhinagar",
+      "state": 1
+    }
+  }
+]

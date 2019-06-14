@@ -1,0 +1,402 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class='col-md-12'>
+					<select id='selectoptions'>
+						<option val='weekly' >Weekly</option>
+						<option val='monthly'>Monthly</option>
+						<option val='quaterly'>Quaterly</option>
+					</select>
+			</div>
+			
+		</div>
+	</div>
+	<div class='container' >
+	<div class='row'>
+		<div class='col-md-3'>
+			<h2  style='font-style:bold;color:black'>Restaurant Name:</h2>
+			<ul class='list-unstyled'  id='myid' style='font-size: 20px;margin-top:10px;color:black;font-style: bold'>
+				{% for rname in resname %}
+					<li id='resis_{{rname.id}}' value='{{rname.id}}' style='font-size: 25px;cursor: pointer;	'
+					 onclick="reschange('{{rname.id}}')" >{{rname.restaurantname}}</li>
+				{% endfor %}
+			</ul>	
+		</div>	
+		<div class='row'>
+		<div class='col-md-9' >
+			<h1 id='optionh1' style="color:black;margin-left: 50px">Weekly Wise Order</h1>
+			<div style="width: 850px;height:500px">
+			<canvas id="myChart" ></canvas>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-12' id='table'>
+				<table  id='datatable' class="table table-bordered" style=" text-align: left">
+
+						<tr >
+						<td colspan="3" style="color: black;text-align:center"><h4>Total Orders</h4></td>
+						</tr>
+						<tr>
+							<td>
+								<h5 style="color: black;text-align:center" >Order No</h5>
+							</td>
+							<td>
+									<h5 style="color: black;text-align:center">Order Date</h5>
+								</td>
+							<td>
+								<h5 style="color: black;text-align:center">Total Price</h5>
+							</td>
+						</tr>
+						
+						<a id='dwn' href="{% url 'imgpdf'   %}" class="btn btn-info pull-right">Download Xhtml</a>
+					</table>
+					
+					<a id="downloadPdf" 	class="btn btn-info pull-right" href='#'>Download</a>
+					
+				</div>
+	</div> 
+</div>
+
+	
+
+{% endblock %}
+{% block javascript %}
+
+
+<script type="text/javascript">
+		{% for rname in resname %}
+			 $('#resis_{{rname.id}}').click(function() 
+			    { 
+			     	  $('.liactive').removeClass('liactive');
+   					 $(this).addClass('liactive');	
+					var selectvalue=$("#selectoptions :selected").val(); 
+					console.log(selectvalue)
+   					 var endpoint='{% url "restaurantreportweeklyapi" rname.id %}'
+   					 console.log(endpoint)
+						document.getElementById("optionh1").innerHTML = selectvalue +' Wise Order'
+						
+			            $.ajax({
+
+			            	method:"GET",
+			            	url:endpoint,
+							dataType: 'json',
+							data: {
+         						 'option': selectvalue       // add the country id to the GET parameters
+        					},
+			            	success:function(data){
+			            		labels=data.labels
+								defaultdata=data.default
+								total=data.total
+								orderserializer=data.orderserializer
+								console.log(JSON.stringify(orderserializer))	
+
+								//console.log(orderserializer[0].id)
+								
+								console.log(total)
+							    setChart()
+								var x=(JSON.stringify(orderserializer))			
+								var a1=JSON.parse(x);
+								if (a1==[])
+								{
+									alert('Nothing to show')
+								}
+								else{
+								$("#datatable").find("tr:not(:nth-child(1)):not(:nth-child(2))").remove();
+									$.each(a1, function(k, v) {
+										$("#datatable").append(
+										
+										'<tr >'+
+											'<td>'+
+												'<h6 style="color: black;text-align:center">'+'#00'+a1[k].id+'</h6>'+
+											'</td>'+
+											'<td>'+
+												'<h6 style="color: black;text-align:center">'+new Date(a1[k].orderdate).getDate()+'/'+new Date(a1[k].orderdate).getMonth()+'/'+new Date(a1[k].orderdate).getFullYear()+'</h6>'+
+											'</td>'+
+											'<td>'+
+												'<h6 style="color: black;text-align:center">'+'Rs '+a1[k].totalpricetax+'</h6>'+
+											'</td>'+
+										'</tr>'
+												   
+         						   ); 
+								});
+								$("#datatable").append(
+									'<tr >'+
+											'<td colspan="3"><h5 style="color: black;text-align:center" >Total Earned: Rs '+ total+'</h5></td>'+
+									'</tr>'
+									
+								);
+							}
+								
+								
+								
+								
+								
+			            	},
+			            	error:function(error_data){
+			            		console.log("error")
+			            		console.log(error_data)
+			            	},
+			            	});
+
+							
+
+			    });
+		{% endfor %}
+
+
+		$(document).ready(function() { 
+            $("#myid li:first-child").addClass('liactive'); 
+            var id=$("#myid li:first-child").val;
+            console.log(id)
+
+            var endpoint='{% url "restaurantreportweeklyapi" resid %}'
+            console.log(endpoint)
+
+			
+            $.ajax({
+
+            	method:"GET",
+            	url:endpoint,
+				data: {
+          'option':'Weekly'     // add the country id to the GET parameters
+        },
+            	success:function(data){
+            		labels=data.labels
+					defaultdata=data.default
+					total=data.total
+					console.log(total)
+					orderserializer=data.orderserializer
+            		setChart()
+					var x=(JSON.stringify(orderserializer))			
+								var a1=JSON.parse(x);
+								console.log(a1[0])
+							
+								$("#datatable").find("tr:not(:nth-child(1)):not(:nth-child(2))").remove();
+									$.each(a1, function(k, v) {
+										$("#datatable").append(
+										
+										'<tr >'+
+											'<td>'+
+												'<h6 style="color: black;text-align:center">'+'#00'+a1[k].id+'</h6>'+
+											'</td>'+
+											'<td>'+
+												'<h6 style="color: black;text-align:center">'+new Date(a1[k].orderdate).getDate()+'/'+new Date(a1[k].orderdate).getMonth()+'/'+new Date(a1[k].orderdate).getFullYear()+'</h6>'+
+											'</td>'+
+											'<td>'+
+												'<h6 style="color: black;text-align:center">'+'Rs '+a1[k].totalpricetax+'</h6>'+
+											'</td>'+
+										'</tr>'
+												   
+         						   ); 
+								});
+								$("#datatable").append(
+									'<tr >'+
+										'<td colspan="3"><h5 style="color: black;text-align:center" >Total Earned: Rs '+ total+'</h5></td>'+
+									'</tr>'
+									
+								);
+            	},
+            	error:function(error_data){
+            		console.log("error")
+            		console.log(error_data)
+            	},
+            });
+        }); 
+
+
+		$("#selectoptions").change(function () {
+			{% for rname in resname %}
+			var id=$( ".liactive" ).val();
+			console.log('hi'+id)
+     		 var endpoint ='{% url "restaurantreportweeklyapi" resid %}' 
+			  console.log(endpoint)
+     		 var selectvalue=$("#selectoptions :selected").val();   // get the selected country ID from the HTML input
+			  document.getElementById("optionh1").innerHTML = selectvalue +' Wise Order'
+      $.ajax({                       // initialize an AJAX request
+        url: endpoint,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'option': selectvalue       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          
+			labels=data.labels
+					defaultdata=data.default
+					total=data.total
+					console.log(total)
+					orderserializer=data.orderserializer
+            		setChart()
+					
+					var x=(JSON.stringify(orderserializer))			
+								var a1=JSON.parse(x);
+								console.log(a1[0])
+							
+								$("#datatable").find("tr:not(:nth-child(1)):not(:nth-child(2))").remove();
+									$.each(a1, function(k, v) {
+										$("#datatable").append(
+										
+										'<tr >'+
+											'<td>'+
+												'<h6 style="color: black;text-align:center">'+'#00'+a1[k].id+'</h6>'+
+											'</td>'+
+											'<td>'+
+												'<h6 style="color: black;text-align:center">'+new Date(a1[k].orderdate).getDate()+'/'+new Date(a1[k].orderdate).getMonth()+'/'+new Date(a1[k].orderdate).getFullYear()+'</h6>'+
+											'</td>'+
+											'<td>'+
+												'<h6 style="color: black;text-align:center">'+'Rs '+a1[k].totalpricetax+'</h6>'+
+											'</td>'+
+										'</tr>'
+												   
+         						   ); 
+								});
+								$("#datatable").append(
+									'<tr >'+
+										'<td colspan="3"><h5 style="color: black;text-align:center" >Total Earned: Rs '+ total+'</h5></td>'+
+									'</tr>'
+									
+								); // replace the contents of the city input with the data that came from the server
+        },
+		error:function(error_data){
+            		console.log("error")
+            		console.log(error_data)
+            	},
+      });
+
+	  {% endfor %}
+
+    });
+</script>
+<script>
+	
+function setChart(){
+	var backgroundColor = 'white';
+Chart.plugins.register({
+    beforeDraw: function(c) {
+        var ctx = c.chart.ctx;
+        ctx.fillStyle = backgroundColor;
+        ctx.fillRect(0, 0, c.chart.width, c.chart.height);
+    }
+});
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+	
+	options: {
+    tooltips: {enabled: false},
+	hover: {mode: null},
+	showTooltips: false,
+  },
+  
+    type: 'line',
+    data: {
+        //labels: ['January','February', 'March', 'April', 'May', 'June','July','August','September','October','November','December'],
+        labels:labels,
+        datasets: [{
+            label: '# Total orders',
+            data:defaultdata,
+            fill:false,
+            borderWidth:1,
+            showLine:true,
+			backgroundColor: 'rgba(255, 0, 0, 0.2)',
+            borderColor:'rgba(0, 0, 0, 1)',
+            lineTension:0,
+            //data: [.5, 0.1,0.2,0.5, 0.2,0.3,.5, 0.1,0.2,0.8, 0.2,0.3],
+           
+            
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+					beginAtZero: true,
+					fontSize: 15
+				},
+				
+               
+			}],
+			xAxes:[{
+				ticks: {
+					
+					fontSize: 15
+				},
+				
+					  major: {
+              fontStyle: 'bold',
+			  fontColor: 'black'
+			  
+            }
+			}]
+        }
+	}
+});
+}
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.1.1/jspdf.plugin.autotable.min.js"></script>
+<script>
+	$('#downloadPdf').click(function(event) {
+
+	
+		var canvas = document.querySelector('#myChart');
+	//creates image
+	var canvasImg = canvas.toDataURL("image/jpeg", 1.0);
+  
+	//creates PDF from img
+	var doc = new jsPDF('landscape');
+	var tab=window.document.getElementById('#datatable')
+	doc.fromHTML(tab)
+	doc.setFontSize(20);
+	doc.text(15, 15, "Cool Chart");
+	doc.addImage(canvasImg, 'JPEG', 10, 10, 280, 150 );
+	
+	console.log('hi')
+	doc.save('canvas.pdf');
+});
+
+</script>
+<script>
+	$('#dwn').click(function(event){
+		
+		var id=$( ".liactive" ).val();
+		var selectvalue=$("#selectoptions :selected").val(); 
+		var url_base64 = document.getElementById('myChart').toDataURL('image/png');
+		console.log(id);
+		console.log(selectvalue);
+
+		console.log(url_base64);
+		var x=url_base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '');
+		console.log(window.location.href);
+		$( '#dwn' ).attr( 'href', function(index, value) {
+
+
+			return value + '?id='+id+'&selectvalue='+selectvalue+'&url_base64='+url_base64;
+		});
+	});
+</script>
+{% endblock %}
+{% block css %}
+	<style>
+	.liactive{
+		background-color:orange;
+		color:blue;
+		padding-left: 20px; 
+	}
+	.foodprepared{
+		background-color:green;border-color:green;width:220px;color:white;
+	}
+	.orderdelivered{
+		background-color:red;border-color:red;width:220px;color:white;
+	}
+	.orderplaced{
+		background-color:blue;border-color:blue;width:220px;color:white;
+	}
+	</style>
+{% endblock %}

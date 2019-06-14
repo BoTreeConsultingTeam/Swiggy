@@ -1,0 +1,20 @@
+
+  <div class="container" style='margin-top: 50px'>
+    <div class="row mb-5">
+      {% for data in restaurant1 %}
+      <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+        <div class="block-4 text-center border">
+          <figure class="block-4-image">
+            <a href="/index/food?id={{data.id}}"><img src="{{data.img.url}}" alt="Image placeholder" class="img-fluid" style='height:300px'></a>
+          </figure>
+          <div class="block-4-text p-4">
+            <h3><a href="/index/food?id={{data.id}}">{{data.restaurantname}}</a></h3>
+            <p class="mb-0">{{data.city.cityname}}</p>
+            <p class="text-primary font-weight-bold">address:{{data.address}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div> 
+</div>    
+ 

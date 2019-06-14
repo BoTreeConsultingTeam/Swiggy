@@ -1,0 +1,45 @@
+{% extends 'adminbase.html' %}
+{% block title %}
+    Restaurant update
+{% endblock %}
+{% block content %}
+  <h2>Update</h2>
+  <form method="post" id='adminrestaurantupdate' enctype="multipart/form-data" data-cities-url="{% url 'ajax_load_cities' %}" novalidate>
+    {% csrf_token %}
+   {% for field in form %}
+      <table border=0>
+        <tr>
+      <td style='width:100px;color:black'>{{ field.label_tag }}</td>
+      <td class='span2'>{{ field }}</td>
+        </tr>
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      
+    {% endfor %}
+  <tr><td><button type="submit">Update</button></td></tr>
+	</table	>
+  </form>
+{% endblock %}
+
+{% block javascript %}
+  <script>
+    $("#id_state").change(function () {
+      var url = $("#adminrestaurantupdate").attr("data-cities-url");
+      console.log(url)  // get the url of the `load_cities` view
+      var stateId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'state': stateId       // add the country id to the GET parameters
+        },
+
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_city").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}
+    Approval
+{% endblock %}
+
+{% block content %}
+  {% if not form %}
+                  <h5 style='text-align: center;font-size: 30px'>Nothing Pending Approval</h5>
+                {% else %}
+<div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-time"></i></span>
+            
+            <h5>Approval List</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-striped table-bordered">
+              <thead>
+                 
+                <tr>
+                  <th>UserName</th>
+                  <th>User Registration Name</th>
+                  <th>Restaurant Owner Name</th>
+                  <th>Restaurant Name</th>
+                  <th>User Contact</th>
+                  <th>State</th>
+                  <th>City</th>
+                  <th>Address</th>
+                  <th>Image</th>
+                </tr>
+              </thead>
+              <tbody>
+               
+                {% for user in form %}
+
+                <tr>
+                  <td class="taskDesc">{{user.user.username}}</td>
+                  <td class="taskDesc">{{user.user.first_name}} {{user.user.last_name}}</td>
+                  <td class="taskDesc">{{user.ownername}}</td>
+                  <td class="taskDesc">{{user.restaurantname}}</td>
+                  <td class="taskDesc">{{user.user.contact}}</td>
+                  <td class="taskDesc">{{user.state.statename}}</td>
+                  <td class="taskDesc">{{user.city.cityname}}</td>
+                  <td class="taskDesc">{{user.address}}</td>
+                  <td class="taskDesc"><img src="{{user.img.url}}" width="100px" height='100px' /></td>
+                  <td class="taskOptions">
+                  <td>  <a href="{% url 'approval1' user.id  %}" class="tip-top" data-original-title="Delete" > <input type='submit' value='Accept' name='Accept'></a> </td>
+                   <td>  <a href="{% url 'approval2' user.id %}" class="tip-top" data-original-title="Delete" > <input type='submit' value='Reject' name='Reject' ></a> </td>
+                  </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+{% endblock %}

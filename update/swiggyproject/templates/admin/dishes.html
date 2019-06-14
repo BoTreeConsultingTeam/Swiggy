@@ -1,0 +1,49 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}
+    Restaurant
+{% endblock %}
+
+{% block content %}
+<div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-time"></i></span>
+            <h5>Dishes  List</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Image </th>
+                  <th>Dish Name</th>
+                  <th>Dish Info</th>
+                  <th>Dish Type</th>
+                  <th>Restaurant Name</th>
+                  <th>Vegor Non Veg</th>
+                  <th>Price</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                {% for user in user_list%}
+                <tr>
+                  <td class="taskDesc"><img src="{{user.img.url}}" width="100px" height='100px' /></td>
+                  <td class="taskDesc">{{user.dishname}}</td>
+                  <td class="taskDesc">{{user.dishinfo}}</td>
+                  <td class="taskDesc">{{user.dish_type.dish_type_name}}</td>
+                  <td class="taskDesc">{{user.restaurant.restaurantname}}</td>
+                  <td class="taskDesc">{{user.veg_or_nonveg}}</td>
+                  <td class="taskDesc">{{user.price}}</td>
+                 
+                  <td class="taskOptions">
+                    <a href="{% url 'admindishupdate' user.id %}" class="tip-top" data-original-title="Update"><i class="icon-pencil"></i></a> 
+                    <a href="{% url 'admindishdelete' user.id %}" class="tip-top" data-original-title="Delete"><i class="icon-remove"></i></a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}
+    Restaurant
+{% endblock %}
+
+{% block content %}
+<div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-time"></i></span>
+            <h5>Restaurant List</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Owner Name</th>
+                  <th>Restaurant Name</th>
+                  <th>Bank Account Number</th>
+                  <th>state</th>
+                  <th>city</th>
+                  <th>address</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for user in user_list%}
+                <tr>
+                  <td class="taskDesc"><img src="{{user.img.url}}" width="100px" height='100px' /></td>
+                  <td class="taskDesc">{{user.ownername}}</td>
+                  <td class="taskDesc">{{user.restaurantname}}</td>
+                  <td class="taskDesc">{{user.bank_account_no}}</td>
+                  <td class="taskDesc">{{user.state.statename}}</td>
+                  <td class="taskDesc">{{user.city.cityname}}</td>
+                  <td class="taskDesc">{{user.address}}</td>
+                  <td class="taskOptions">
+                    <a href="{% url 'adminrestaurantupdate' user.id %}" class="tip-top" data-original-title="Update"><i class="icon-pencil"></i></a> 
+                    <a href="{% url 'adminrestaurantdelete' user.id %}" class="tip-top" data-original-title="Delete"><i class="icon-remove"></i></a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+{% endblock %}

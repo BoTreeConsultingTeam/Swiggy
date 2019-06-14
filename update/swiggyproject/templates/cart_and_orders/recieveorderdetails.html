@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %
+{% block content %}
+
+ <div class="site-section">
+      <div class="container">
+        <div class="row mb-3">
+        	
+
+          <form class="col-md-12" method="post">
+            <div class="site-blocks-table">
+              <table style='border:0px ; border-color: transparent;' class="table table-bordered"  >
+                <thead>
+                	<tr><th class="product-name" colspan="6"><h3>Your  Order</h3></th></tr>
+                  <tr>
+                    <th class="product-thumbnail">Image</th>
+                    <th class="product-name">Product</th>
+					       <th style='font-style: bold ;font-size: 15px'class="product-name" > Restaurant Name</th>          
+          			<th class="product-price">Price</th>
+                    <th class="product-quantity">Quantity</th>
+                    <th class="product-total">Total Price</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                {% for data1 in orderitems %}
+                  <tr>
+                    <td class="product-thumbnail">
+                      <img src="{{data1.dish.img.url}}" alt="Image" class="img-fluid">
+                    </td>
+                    <td class="product-name">
+                      <h2 class="h5 text-black">{{data1.dish.dishname}}</h2>
+                    </td>
+                    <td class="product-name">
+                      <h2 class="h5 text-black">{{data1.orders.restaurant.restaurantname}}</h2>
+                    </td>
+                    <td>RS {{data1.dish.price}}</td>
+                    <td>
+                     {{data1.quantity}}
+
+                    </td>
+                     
+                    <td>Rs  {{data1.totalprice}} </td>
+                                    
+                  </tr>
+
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+        <div class="site-section">
+          <div class='row'>
+            
+          <form class='col-md-12'>
+
+             <div class="site-blocks-table">
+              <table class="table table-bordered" style='border:0px ; border-color: transparent;text-align: left'>
+                <thead>
+                  <tr><th colspan="2"> <h3>Total Bill</h3></th></tr>
+                  
+                  <tr>
+                     <td >
+                      <h6 >Total Prize without tax</h6>
+                    </td>
+                    <td class="product-name">
+                      <h6>Rs {{price}} </h6>
+                    </td>
+                  </tr>
+
+                  <tr>
+                     <td >
+                      <h6 >Total Prize with tax</h6>
+                    </td>
+                    <td class="product-name">
+                      <h6>Rs {{price_tax}} </h6>
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </form>
+
+       
+        </div>
+        </div>
+
+</div>
+</div>
+  
+{% endblock %}
